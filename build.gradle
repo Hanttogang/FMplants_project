@@ -29,7 +29,7 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 }
 
-def frontendDir = "$projectDir/src/main/frontend"
+def frontendDir = "$projectDir/frontend"
 
 sourceSets {
 	main {
