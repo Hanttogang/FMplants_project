@@ -5,7 +5,7 @@ on:
 
 name: Deploy Spring boot to Amazon EC2
 env:
-  PROJECT_NAME: action_codedeploy
+  PROJECT_NAME: plantProject
 
 jobs:
   deploy:
@@ -36,8 +36,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIAVUTBJTH5H3WZBYTB
-          aws-secret-access-key: AKIAVUTBJTH5GQD4OQM7
+          aws-access-key-id: AKIAVUTBJTH5BKF6QLVU
+          aws-secret-access-key: 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
           aws-region: ap-northeast-2
 
       - name: Upload to S3
