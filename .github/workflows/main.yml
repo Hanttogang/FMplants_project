@@ -10,7 +10,7 @@ env:
 jobs:
   deploy:
     name: DEPLOY
-    runs-on: linux
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
