@@ -1,0 +1,47 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Deploy Spring boot to Amazon EC2
+env:
+  PROJECT_NAME: plantProject
+
+jobs:
+  deploy:
+    name: DEPLOY
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        shell: bash
+
+      - name: Build with Gradle
+        run: ./gradlew build
+        shell: bash
+        
+      - name: Make zip file
+        run: zip -qq -r ./$GITHUB_SHA.zip .
+        shell: bash
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: AKIAVUTBJTH5BKF6QLVU
+          aws-secret-access-key: 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
+          aws-region: ap-northeast-2
+
+      - name: Upload to S3
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://plantprojectbucket/$PROJECT_NAME/$GITHUB_SHA.zip
+
+      - name: Code Deploy
+        run: aws deploy create-deployment --application-name plantProject --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=plantprojectbucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
