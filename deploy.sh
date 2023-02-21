@@ -13,7 +13,7 @@ git pull
 
 # build 수행
 echo "> project build start"
-./gradlew clean build
+./gradlew build
 
 echo "> directory로 이동"
 cd $REPOSITORY
