@@ -11,6 +11,9 @@ cd $REPOSITORY/Plant_Project/
 echo "> Git Pull"
 git pull
 
+# gradle 권한 부여
+chmod +x ./gradlew
+
 # build 수행
 echo "> project build start"
 ./gradlew build
