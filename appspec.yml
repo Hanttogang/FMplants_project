@@ -3,12 +3,8 @@ os: linux
 
 files:
   - source: /
-    destination: /plantProject
-permissions:
-  - object: /plantProject
-    owner: ubuntu
-    group: ubuntu
-    mode: 755
+    destination: /home/ec2-user/projects
+    
 hooks:
   AfterInstall:
     # location은 프로젝트의 root경로를 기준
