@@ -11,7 +11,7 @@ public class HelloController {
 
     @GetMapping("/api/hello")
     public List<String> Hello(){
-        return Arrays.asList("테스트테스트테스트테스트");
+        return Arrays.asList("제발ㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂ");
     }
 }
 
