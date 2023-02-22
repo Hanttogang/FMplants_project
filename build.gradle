@@ -33,11 +33,6 @@ jar {
 	enabled = false
 }
 
-manifest {
-	attributes 'Main-Class': 'Plant.Plant_Project.PlantProjectApplication'
-}
-
-
 def frontendDir = "$projectDir/frontend"
 
 sourceSets {
