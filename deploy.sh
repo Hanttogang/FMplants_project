@@ -5,7 +5,7 @@ REPOSITORY=/home/ec2-user/projects
 APP_NAME=Plant_Project
 
 #git clone 받은 위치로 이동
-cd $REPOSITORY/Plant_Project/
+cd $REPOSITORY/$APP_NAME/
 
 # master 브랜치의 최신 내용 받기
 echo "> Git Pull"
@@ -23,7 +23,7 @@ cd $REPOSITORY
 
 # build의 결과물 (jar 파일) 특정 위치로 복사
 echo "> build 파일 복사"
-cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/
+cp $REPOSITORY/$APP_NAME/build/libs/*.jar $REPOSITORY/
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 CURRENT_PID=$(pgrep -f ${PROJECT_NAME}.*.jar)
