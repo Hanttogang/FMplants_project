@@ -5,7 +5,7 @@ const Header = () => {
         <header className="header">
             <div>
                 <div>
-                    <h2>Header</h2>
+                    <h2>Header 헤더입니다.</h2>
                 </div>
             </div>
         </header>
